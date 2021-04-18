@@ -1,0 +1,90 @@
+$white : white ;
+
+@media screen and (max-width: 478px) {
+  a{
+    display: none;
+  }
+  nav {
+    padding-top: 64px;
+     padding-bottom: 64px;
+     display: flex;
+     justify-content: space-between;
+   }
+  #logo {
+    text-align: left;
+    margin-left: 20px;
+  }
+  #hamburger{
+    margin-right: 20px;
+  }
+  
+  .jumbotron {
+    background-image: url("../images/mobile/image-hero.jpg");
+    height: 827px;
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 145px;
+  }
+  .motto{
+    color: $white;
+    font-size: 50px;
+    text-transform: uppercase;
+    border: 2px solid $white;
+    width: 415px;
+    height: 300x;
+    padding: 0px 33px 0px ;
+    margin: 120px auto;
+    }
+  }
+
+@media screen and (min-width: 1280px) {
+    #hamburger {
+      display: none;
+   }  
+
+    .jumbotron {
+      background-image: url("../images/desktop/image-hero.jpg");
+      height: 647px;
+      background-repeat: none;
+      background-position: center;
+      background-size: cover;
+      padding-bottom: 145px;
+        nav {
+          padding-top: 64px;
+          padding-bottom: 64px;
+          display: flex;
+          justify-content: space-between;
+       }
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+        
+        a:hover{
+          border-bottom: 3px solid $white;
+          padding: 5px 0px;
+        }
+        }
+
+        #logo {
+          flex-basis: 60%;
+          text-align: left;
+        }
+    
+        .container{
+          width: 80%;
+          margin: 50px auto;
+      }
+
+        .motto{
+          margin: 50px 0px;
+          padding: 0px 45px 0px;
+          color: $white;
+          font-size: 70px;
+          text-transform: uppercase;
+          border: 2px solid $white;
+          width: 620px;
+          height: 350px;
+        }
+      }

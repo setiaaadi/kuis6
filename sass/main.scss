@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+@import "modules/header";
+@import "modules/footer";
+@import "modules/konten";
+
+$black : black ;
+$white : white ;
+
+$image-item-desktop: (
+    1: "../images/desktop/image-deep-earth.jpg",
+    2: "../images/desktop/image-night-arcade.jpg",
+    3: "../images/desktop/image-soccer-team.jpg",
+    4: "../images/desktop/image-grid.jpg",
+    5: "../images/desktop/image-from-above.jpg",
+    6: "../images/desktop/image-pocket-borealis.jpg",
+    7: "../images/desktop/image-curiosity.jpg",
+    8: "../images/desktop/image-fisheye.jpg",
+);
+
+$image-item-mobile: (
+    1: "../images/mobile/image-deep-earth.jpg",
+    2: "../images/mobile/image-night-arcade.jpg",
+    3: "../images/mobile/image-soccer-team.jpg",
+    4: "../images/mobile/image-grid.jpg",
+    5: "../images/mobile/image-from-above.jpg",
+    6: "../images/mobile/image-pocket-borealis.jpg",
+    7: "../images/mobile/image-curiosity.jpg",
+    8: "../images/mobile/image-fisheye.jpg",
+);
+
+*{
+    box-sizing: border-box;
+  }
+  
+  body {
+  min-width: 447px;
+  font-family: Josefin Sans;
+  font-weight: 300;
+  }
+
+@media screen and (max-width: 478px) {
+    .sub-header{  
+        margin: 100px auto 20px;
+        text-align: center;        
+    }
+    .content{
+        padding: 40px 50px 10px 20px;
+         display: block;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    
+        .content-item{
+            width: 415px;
+            margin: 10px 10px 10px 10px;
+            cursor: pointer;
+            position: relative;
+            &:hover{
+                opacity: 0.5;
+                    .description {
+                         color: $black;
+                        }
+                }   
+          
+            .img-product{
+                height: 155px;
+                background-position: center;
+                background-size: 100%;
+                background-repeat: no-repeat; 
+                position: relative;                
+            }
+    
+            .description{
+                font-size: 25px;
+                width: 130px;
+                color: $white;
+                position: absolute;
+                right: 270px;
+                bottom: -5px;
+                text-align: left;
+                
+            }
+    
+            @each $index, $image in $image-item-mobile {
+                &:nth-child(#{$index}){
+                    .img-product{
+                        background-image: url(#{$image});
+                    }
+                }
+                
+            }
+        }
+     }
+    }
+
+@media screen and (min-width: 1280px) {
+        .sub-header{
+            justify-content: space-between;
+        }
+           
+            .btn-see-all{
+              border: 2px solid $black;
+                text-decoration: none;
+                color: $black;
+                padding: 5px 20px;
+                font-size: 14px;
+                position: absolute;
+                right: 70px;
+                top: 1390px;
+                
+            }
+            .btn-see-all:hover{
+              background-color: $black;
+              color: $white;
+              padding: 5px 20px;
+            }
+            
+        .content{
+            padding: 10px 10px 10px 160px;
+             display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        
+            .content-item{
+                width: 250px;
+                margin: 10px 10px 10px 10px;
+                cursor: pointer;
+                position: relative;
+                
+                .img-product{
+                    height: 500px;
+                    background-position: center;
+                    background-size: 100%;
+                    background-repeat: no-repeat; 
+                    position: relative;
+                    &:hover{
+                        opacity: 0.5;
+                             .description:hover p{
+                                 color: $black;
+                         }
+                    }
+                             
+                }
+
+                .description{
+                    font-size: 25px;
+                    width: 130px;
+                    color: $white;
+                    position: absolute;
+                    right: 100px;
+                    bottom: 50px;
+                }
+
+                @each $index, $image in $image-item-desktop {
+                    &:nth-child(#{$index}){
+                        .img-product{
+                            background-image: url(#{$image});
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+  
+
